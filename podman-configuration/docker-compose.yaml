@@ -9,6 +9,7 @@ services:
     - /opt/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
     - 9090:9090
+    privileged: true
 
   grafana_server:
     image: grafana/grafana:6.7.2
