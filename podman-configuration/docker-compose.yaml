@@ -1,7 +1,7 @@
 version: "3"
 services:
   prometheus_server:
-    image: prom/prometheus:v2.17.0
+    image: prom/prometheus:latest
     volumes:
     - type: volume
       source: prometheus_data
@@ -12,7 +12,7 @@ services:
     privileged: true
 
   grafana_server:
-    image: grafana/grafana:6.7.2
+    image: grafana/grafana:latest
     volumes:
     - type: volume
       source: grafana_configuration
@@ -29,10 +29,10 @@ services:
     ports:
     - 9272:9272
     environment:
-      VSPHERE_HOST: <HOST_IP>
+      VSPHERE_HOST: 1.1.1.1
       VSPHERE_IGNORE_SSL: True
-      VSPHERE_USER: <USER>
-      VSPHERE_PASSWORD: "<PASSWORD>"
+      VSPHERE_USER: readonly@vsphere.local
+      VSPHERE_PASSWORD: "Password1"
 
 volumes:
   prometheus_data:
